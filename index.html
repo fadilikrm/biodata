@@ -20,16 +20,16 @@
                       <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-bs-scroll="off" href="#about">About</a>
+                      <a class="nav-link" href="#about">About</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-bs-scroll="off" href="#biodata">Biodata</a>
+                      <a class="nav-link" href="#biodata">Biodata</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-bs-scroll="off" href="#gallery">Gallery</a>
+                      <a class="nav-link" href="#gallery">Gallery</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-bs-scroll="off" href="#comment">Comment</a>
+                      <a class="nav-link" href="#comment">Comment</a>
                   </li>
               </ul>
           </div>
@@ -175,37 +175,6 @@
                 }
             }, 200);
         });
-    </script>
-    <script>
-      document.querySelectorAll('.nav-link').forEach(function (elem) {
-          elem.addEventListener('click', function () {
-              if (window.innerWidth < 992) { 
-                  document.querySelector('.navbar-toggler').click();
-              }
-          });
-      });
-    </script>
-    <script>
-      document.querySelectorAll('.nav-link').forEach(function (elem) {
-        elem.addEventListener('click', function (e) {
-            e.preventDefault(); // Mencegah tindakan default dari link
-            
-            // Mendapatkan elemen target berdasarkan ID dari href link
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                // Menghitung posisi scroll target element
-                const offset = targetElement.getBoundingClientRect().top + window.scrollY;
-                
-                // Menggulir ke posisi target element dengan animasi
-                window.scrollTo({
-                    top: offset,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });    
     </script>
   </body>
 </html>
