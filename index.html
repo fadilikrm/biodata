@@ -185,5 +185,27 @@
           });
       });
     </script>
+    <script>
+      document.querySelectorAll('.nav-link').forEach(function (elem) {
+        elem.addEventListener('click', function (e) {
+            e.preventDefault(); // Mencegah tindakan default dari link
+            
+            // Mendapatkan elemen target berdasarkan ID dari href link
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Menghitung posisi scroll target element
+                const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+                
+                // Menggulir ke posisi target element dengan animasi
+                window.scrollTo({
+                    top: offset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });    
+    </script>
   </body>
 </html>
