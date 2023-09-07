@@ -19,6 +19,9 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#biodata">Biodata</a>
             </li>
             <li class="nav-item">
@@ -31,9 +34,22 @@
         </div>
       </div>
     </nav>
+      <div class="p-5 text-center bg-image" style="background-image: url('img/images.jpg'); background-repeat: no-repeat; background-size: cover; height: 400px;">
+        <div class="mask" style="background-color:rgb(0,0,0,0.7)">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+              <h1 class="mb-3">Ahmad Fadhil Ikram</h1>
+              <h4 class="mb-3">Undergraduate Student Of Computer and Network</h4>
+              <br>
+              <a class="btn btn-outline-light btn-lg" href="https://wa.me/+6289502743924" role="button">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
     <br>
-    <div class="container" style="padding: 40;">   
+    <div class="container" style="padding: 40;">
     <div class="row justify-content-center">
+      <h1 class="text-center" style="padding: 55;" id="about">About Me</h1>   
       <div class="card mb-3 card-bordered" style="max-width: 600px;">
         <div class="row g-0">
           <div class="col-md-4">
@@ -45,10 +61,10 @@
               <p class="card-text">Saya adalah lulusan Rekayasa Perangkat Lunak (RPL) dari SMK Mutiara Ilmu Makassar, yang saat ini menempuh 
                 jenjang perkuliahan di Politeknik Negeri Ujung Pandang dengan program studi Teknik Komputer dan Jaringan (TKJ).</p>
               <h6>Feel Free To Connect With Me</h6>
-                <a href="https://instagram.com/fadilikrm"> <i class="fa-brands fa-square-instagram fa-3x" style="color: black;"></i></a>
-                <a href="https://github.com/fadilikrm"><i class="fa-brands fa-square-github fa-3x" style="color: black;"></i></a>
-                <a href="https://linkedin.com/in/ahmad-fadhil-ikram/"> <i class="fa-brands fa-linkedin fa-3x" style="color: black;"></i></a>
-                <a href="https://wa.me/+6289502743924"><i class="fa-brands fa-square-whatsapp fa-3x" style="color: black;"></i></a>          
+                <a href="https://instagram.com/fadilikrm"> <i class="fa-brands fa-square-instagram fa-3x" style="color: black; margin-right: 10px;"></i></a>
+                <a href="https://github.com/fadilikrm"><i class="fa-brands fa-square-github fa-3x" style="color: black; margin-right: 10px;"></i></a>
+                <a href="https://linkedin.com/in/ahmad-fadhil-ikram/"> <i class="fa-brands fa-linkedin fa-3x" style="color: black; margin-right: 10px;"></i></a>
+                <a href="https://wa.me/+6289502743924"><i class="fa-brands fa-square-whatsapp fa-3x" style="color: black; margin-right: 10px;"></i></a> 
             </div>
           </div>
         </div>
@@ -138,7 +154,7 @@
       </div>
       <footer class="bg-light text-center text-lg-start">
         <div class="text-center p-3" style="background-color: rgb(0, 255, 238);">
-          © 2023 Copyright: Fadilikram
+          © 2023 Copyright <b>Fadilikram.</b> All Right Reserved
         </div>
         <!-- Copyright -->
       </footer>
@@ -159,5 +175,14 @@
             }
         }, 200);
     });
+</script>
+<script>
+  document.querySelectorAll('.nav-link').forEach(function (elem) {
+      elem.addEventListener('click', function () {
+          if (window.innerWidth < 992) { 
+              document.querySelector('.navbar-toggler').click();
+          }
+      });
+  });
 </script>
 </html>
