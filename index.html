@@ -3,8 +3,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+      .canvasjs-chart-credit {
+        display: none;
+      }      
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg sticky-top" style="background-color: rgb(255, 255, 255);">
@@ -141,8 +147,17 @@
           </div>
         </div>
         </div>
+        <br id="dapen">
+        <div class="container">
+          <h1 class="text-center" style="padding: 45;">Data Kependudukan Pulau Sulawesi</h1>   
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <div style="text-align: center; margin-top: 50px;">
+          <iframe width="400" height="400" src="https://www.youtube.com/embed/vgqKpqqkOT8" frameborder="0" allowfullscreen></iframe>
+        </div>      
+       </div>
       <div id="comment" class="container" style="padding: 40px;">
         <h1 class="text-center">Komentar</h1>
+        <div class="stars">
         <form style="padding: 15;">
             <div class="mb-3">
                 <label for="nama">Nama:</label>
@@ -158,6 +173,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Kirim Komentar</button>
         </form>
+        </div>
         </div>
       </div>
       <footer class="bg-light text-center text-lg-start shadow-lg">
@@ -183,5 +199,31 @@
             }, 200);
         });
     </script>
+    <script>
+      window.onload = function () {
+      
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        data: [{
+          type: "doughnut",
+          startAngle: 60,
+          //innerRadius: 60,
+          indexLabelFontSize: 17,
+          indexLabel: "{label} - #percent%",
+          toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+          dataPoints: [
+            { y: 2659000 , label: "Sulawesi Utara" },
+            { y: 1192700, label: "Gorontalo" },
+            { y: 3066100, label: "Sulawesi Tengah" },
+            { y: 9225800, label: "Sulawesi Selatan"},
+            { y: 1458600, label: "Sulawesi Barat"},
+            { y: 2701700, label: "Sulawesi Tenggara"}
+          ]
+        }]
+      });
+      chart.render();
+      
+      }
+      </script>
   </body>
 </html>
